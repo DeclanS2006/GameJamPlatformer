@@ -682,11 +682,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: e6b9a268-72ad-48a1-b126-06fd7226c6eb
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: NotEnoughTime 2026-02-01_19-48-56
-  organizationId: 
+  projectName: GameJamPlatformer
+  organizationId: antoninlcmwgkyt6g
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
