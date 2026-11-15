@@ -3,10 +3,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Attack - Example", menuName = "Enemy Logic/Attack Logic/Example")]
 public class EnemyAttackExample : EnemyAttackSOBase
 {
+    [SerializeField] private Rigidbody2D BulletPrefab;
     [SerializeField] private float _timeBetweenAttacks = 2f;
     [SerializeField] private float _timeTillExit = 3f;
     [SerializeField] private float _distanceToCountExit = 3f;
-    // [SerializeField] private float _bulletSpeed = 10f;
+    [SerializeField] private float _bulletSpeed = 10f;
 
     private float _timer;
     private float _exitTimer;
@@ -39,10 +40,10 @@ public class EnemyAttackExample : EnemyAttackSOBase
             Debug.Log("Attacking");
 
             //This calculates the distance to the player, not sure if needed, needed for a bullet
-            // Vector2 dir = (playerTransform,position - enemy.transform.position).normalized;
+            Vector2 dir = (playerTransform.position - enemy.transform.position).normalized;
 
-            // Rigidbody2D bullet = GameObject.Instantiate(BulletPrefab, enemy.transform.position, Quanternion.identity);
-            // bullet.velocity = dir * _bulletSpeed;
+            Rigidbody2D bullet = GameObject.Instantiate(BulletPrefab, enemy.transform.position, Quaternion.identity);
+            bullet.linearVelocity = dir * _bulletSpeed;
         }
 
         // This is expensive to do everyframe so find another place to do it
@@ -79,5 +80,8 @@ public class EnemyAttackExample : EnemyAttackSOBase
     public override void ResetValues()
     {
         base.ResetValues();
+
+        _timer = 0f;
+        _exitTimer = 0f;
     }
 }

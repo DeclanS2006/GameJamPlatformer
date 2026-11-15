@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         anim.SetFloat("horizontal", Mathf.Abs(moveVal.x));
-        anim.SetFloat("vertical", Mathf.Abs(moveVal.y));
         
         if(moveVal.x > 0 && transform.localScale.x < 0 ||
                 moveVal.x < 0 && transform.localScale.x > 0)
@@ -60,17 +59,9 @@ public class PlayerMovement : MonoBehaviour
         moveVal = value.Get<Vector2>();
     }
 
-    void OnJump()
+    void OnFlipGravity()
     {
-        if(isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, StatsManager.Instance.jumpForce);
-        }
-        else if(extraJumps > 0)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, StatsManager.Instance.jumpForce);
-            extraJumps--;
-        }
+       Physics2D.gravity *= -1;
     }
 
     void OnDash()

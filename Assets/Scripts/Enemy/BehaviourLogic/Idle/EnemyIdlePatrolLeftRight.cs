@@ -32,6 +32,7 @@ public class EnemyIdlePatrolLeftRight : EnemyIdleSOBase
         _direction = (_targetPos - enemy.transform.position).normalized;
 
         enemy.MoveEnemy(_direction * PatrolSpeed);
+        //Debug.Log("Patrolling");
 
         if ((enemy.transform.position - _targetPos).sqrMagnitude < 0.01f )
         {

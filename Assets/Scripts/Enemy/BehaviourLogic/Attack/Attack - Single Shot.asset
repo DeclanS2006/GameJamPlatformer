@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83cf3851ccc22e247ad48bcf1f23898c, type: 3}
-  m_Name: Attack - Example
+  m_Name: Attack - Single Shot
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackExample
+  BulletPrefab: {fileID: 4539030328779877506, guid: c9c4d07bbc3fba6468dbb937ef9ec621, type: 3}
   _timeBetweenAttacks: 2
   _timeTillExit: 3
   _distanceToCountExit: 3
+  _bulletSpeed: 10

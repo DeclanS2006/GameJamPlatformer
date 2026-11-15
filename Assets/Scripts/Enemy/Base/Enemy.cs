@@ -93,6 +93,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     {
         rb.linearVelocity = velocity;
         CheckDirection();
+        //Debug.Log("Moving");
+        //Debug.Log(velocity);
     }
 
     public void CheckDirection()

@@ -26,6 +26,11 @@ public class EnemyChaseSOBase : ScriptableObject
         {
             enemy.StateMachine.ChangeState(enemy.AttackState);
         }
+        else if (!enemy.IsAggroed)
+        {
+            // Player left the aggro trigger - give up the chase
+            enemy.StateMachine.ChangeState(enemy.IdleState);
+        }
     }
     public virtual void DoPhysicsLogic() { }
     public virtual void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType) { }
